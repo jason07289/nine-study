@@ -1,0 +1,652 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Question</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="aec9c58f-ca7b-4f53-9622-3a4edb40fff4" class="page sans"><header><h1 class="page-title">Question</h1></header><div class="page-body"><p id="3b47191b-ff83-4f25-accf-8cb86772b55b" class="block-color-purple_background"><strong>#. Bootstrap json 파일 확인하기</strong></p><ul id="84ae492d-03be-4819-ad91-12048f7e58da" class="bulleted-list"><li>Bootstrap, 테라폼을 통해 Openshift 기반의 k8s cluster 구축</li></ul><ul id="cd7776d0-35c9-4567-8707-d6fdf6824a48" class="bulleted-list"><li>k8s cluster를 구축한다는 의미(Openshift에서 Component를 구축함)</li></ul><p id="2c1b6af0-7d48-40ae-92a3-154d972b76b4" class="">→ Master Node Component Setup</p><p id="41d16801-0457-4ba6-bacf-869b7d822cb8" class="">→ Workder Node Component Setup</p><p id="4e7664ab-4041-4fea-8197-be746641cf41" class="">→ Other... ( k8s cluster 기본 설정)</p><p id="19408aff-74db-40ee-9254-d15f29c139ec" class="">실제 테라폼 파일을 월요일날 보여주신다고 약속하심.</p><p id="6cd8e3d6-faab-40cf-8ab4-807972e03786" class="">
+</p><p id="3ca1e82e-2a8b-464a-89d0-17f1a9625885" class="block-color-red"><strong>!!!! Setup이 아니다.</strong></p><p id="73b1acac-22ed-4d2e-b9a1-f861f2dade8b" class="">→ Component Pod를 올리는 것 !</p><p id="1038b742-7727-415c-b34d-254d45bb55ef" class="">k8s cluster 구축 시, Component Pod로 올라간다.</p><p id="d302ea4d-931a-4ae3-9c83-a53f617f7d1e" class=""><strong>Master Node,</strong> </p><figure id="7108a234-89a7-4b41-8b37-2e08de84f74a" class="image"><a href="Question%20aec9c58fca7b4f5396223a4edb40fff4/Untitled.png"><img style="width:512px" src="Question%20aec9c58fca7b4f5396223a4edb40fff4/Untitled.png"/></a></figure><p id="137ce5c6-3809-43af-836d-7a71ede670e9" class="">
+</p><p id="c00f6d79-780b-4b25-a825-a925ab7c5630" class=""><strong>Worker Node</strong></p><figure id="cc77792f-4c7e-4c15-82f6-eef8cfb2578c" class="image"><a href="Question%20aec9c58fca7b4f5396223a4edb40fff4/Untitled%201.png"><img style="width:512px" src="Question%20aec9c58fca7b4f5396223a4edb40fff4/Untitled%201.png"/></a></figure><p id="a1161058-6cbe-42e8-8096-4513bf46ae7d" class="">
+</p><p id="b45265ed-70aa-4431-bb5b-f8ed25d03cc1" class="block-color-purple_background"><strong>#. ETCD - pod Service</strong></p><p id="be6f62d5-c642-4d58-837f-b8fc8e21c369" class="">ETCD의 경우 1,3,5,7,9...로 세팅이 가능하다.</p><p id="8afba99c-8678-4d34-9914-3c7425d9e777" class="">ETCD는 가용%가 51%가 넘어야 되므로 2개를 세팅할 수 없다.</p><p id="1a8c18d8-3307-499a-8337-4a81e8a47bd3" class="">따라서 Master Node도 1,3,5,7,9 형식으로 통상적으로 세팅된다.</p><p id="785005aa-dbc7-4f3a-a758-ae5b400d75d9" class="">
+</p><p id="8b747a8e-4e6c-4363-b601-7a13d3266bf7" class="">
+</p><p id="6e5e1475-7acf-4846-b2b9-41f9235edf32" class="block-color-purple_background"><strong>#. Pod들 간의 통신</strong></p><ul id="3908a30e-c37b-4612-a2c2-968d57d6228a" class="bulleted-list"><li>Worker Node에는 KubeProxy Component가 존재한다.</li></ul><ul id="fe8732a8-217b-4cb9-bea2-809676000537" class="block-color-red bulleted-list"><li><strong>CoreDNS(Service N → L/B → pod)</strong></li></ul><p id="89f522aa-efca-4675-8042-4eab0699a1b3" class="block-color-red"><strong>→ 이거 맞는지 다시 확인해야함.</strong></p><figure id="3d68e6fc-4d45-45c5-bb0f-937eef736e53" class="image"><a href="Question%20aec9c58fca7b4f5396223a4edb40fff4/Untitled%202.png"><img style="width:817px" src="Question%20aec9c58fca7b4f5396223a4edb40fff4/Untitled%202.png"/></a></figure><p id="bfe119fc-9586-4072-b4b0-10a57348e090" class="">
+</p><p id="89d87133-f4a4-429b-bebb-6b1c6dec0bbd" class="">
+</p><p id="dbc843e8-f5f4-4c16-9de1-8b50935c9795" class="block-color-purple_background"><strong>#. Bastion의 역할? </strong></p><p id="46de1b1b-b9ea-45c3-ae36-5b1c914be0c9" class="">Bastion은 사실 private-cloud라면 필요없다.</p><p id="1befaa71-dcae-4f9d-bc41-17812a6e737c" class="">public-cloud일때, 보안상 내부망을 접속하기 위한 Server이다.</p><p id="078a076c-8dd2-4a6d-8602-4120e0fce64c" class="">Kubectl, Dokcer 등 CLI를 날려서 K8S Cluster와 통신하며 이를 제어한다.</p><p id="f7183aa3-d2bb-4055-bb65-cbab9318f9d4" class="">
+</p><p id="88b8d69d-ff33-4635-a74b-5c796c8cc928" class="block-color-purple_background"><strong>#. Logging EFK - pod 구성</strong></p><ul id="1fb3d24d-bf74-4b64-b3d2-acf3b78f1175" class="bulleted-list"><li>OpenShift 환경에서, fluetd / elasticsearch / kibana는 각각의 pod로 서비스한다.</li></ul><ul id="e0a4ecc9-5e29-440e-ad3d-9528083959ca" class="bulleted-list"><li>굳이 여러개의 Container를 생성하여 하나의 pod로 띄울 필요가 없음.</li></ul><p id="b7ab7610-66ce-4aaa-bf79-475a0e094704" class="">→ 통상적으로 1pod-1container로 구성한다.</p><p id="516d5d03-e231-4cfc-b75b-56db9075b962" class="">
+</p><p id="99e6a86a-2d7c-485b-bc73-728b2dce0834" class="block-color-purple_background"><strong>#. Logging EFK - 이중화 구성</strong></p><ul id="ecf583b8-b497-4b66-b4d8-234d4d888c1a" class="bulleted-list"><li>EFK를 예로 들어 설명한다.</li></ul><ul id="7cc35ee4-931c-4e8c-8ec3-daafa016e1f2" class="bulleted-list"><li>Replica set은 하나로 설정되어있는 환경이지만, 이중화 구성이 가능하다.</li></ul><ul id="0595e2c0-11ed-40ff-aa37-4fd19a0c821e" class="bulleted-list"><li>리소스를 할당하여 장애를 대비한다.</li></ul><ul id="e3f6075a-02b0-455b-a7cb-1e801a7d9907" class="bulleted-list"><li>ElasticSearch의 경우, Data를 저장해야하며 할당된 Disk에 저장한다.</li></ul><p id="deab95c3-7612-4be4-8dfb-30dbc6417904" class="">→ 이를 Rook Chef를 통해 분산 스토리지로 Worker Node에 Logical하게 Storage를 관리한다.</p><p id="1816d101-e1e7-462e-88b2-741de5472051" class="">     Leader / Follow의 개념이 아닌 무조건 Storage 동기화함.</p><ul id="efa8ffb4-572d-471c-a5f9-f0984d767897" class="bulleted-list"><li>1개의 Worker Node에서 1 pod가 생성되는 것이 원칙이며, 다른 1개의 Worker Node의 1 pod는 Resource가 잡힌상태에서 대기한다.(active-inactive 방식이 아니라 active-active 방식임)</li></ul><ul id="cfe25c59-91ae-488e-b695-4943e0e4d36b" class="bulleted-list"><li>1개가 동작될때, 다른1개가 동작하지 않는 방식이지만 모두 서비스된다.</li></ul><p id="779fa4fa-0439-4aef-83fa-b5e8323264b9" class="">
+</p><p id="6bba4b41-dd21-42f2-96bf-e1e61f8c214c" class="block-color-purple_background"><strong>#. Replica</strong></p><ul id="165512a8-8f7e-43f5-8b47-64491134a59b" class="bulleted-list"><li>pod 생성 시에는 무조건 image Registry에서 가져와 pod를 띄운다.</li></ul><p id="5190ed28-2333-4534-a3fa-94826218b8e2" class="">→ 만약 Server local memory에 image가 적재되어 있다면, cache한다.</p><ul id="727ca339-aae8-4947-a053-77b6be1d0e22" class="bulleted-list"><li>하나의 image에 대한 여러 개의 pod가 동시에 죽는다면, k8s cluster 내 replica set에 따라 띄울려고 한다.</li></ul><p id="324c2b43-02b8-4942-b6dc-a3c730992662" class="">
+</p><p id="d047b353-a370-41e0-80b9-d8b858bd8ba2" class="block-color-purple_background"><strong>#. CI/CD - Step.. 어려워</strong></p><figure id="7423f92f-a80e-4f29-9b0f-01b7a87558a2" class="image"><a href="Question%20aec9c58fca7b4f5396223a4edb40fff4/Untitled%203.png"><img style="width:1072px" src="Question%20aec9c58fca7b4f5396223a4edb40fff4/Untitled%203.png"/></a></figure><p id="8d1094bc-39f4-4e0e-8b6a-90c1e89be315" class="">
+</p><p id="da5f54d3-fa13-473b-b591-40db3556f641" class="">
+</p><p id="afe28472-071d-4369-a560-3b46cd01fdfa" class="block-color-purple_background"><strong>#. Doker - Container Engine 쓰지 않는 이유</strong></p><ol type="1" id="04c53c40-c980-4c3f-808f-b630dda6f7b4" class="numbered-list" start="1"><li>무겁다.</li></ol><ol type="1" id="2f4ff0b5-7999-40d8-b2a9-8c76de400c09" class="numbered-list" start="2"><li>Doker demon이 죽으면 모든 pod가 죽는다.</li></ol><p id="5e06103b-7027-4378-bb85-1d64ba1b854b" class=""><strong>→ CRI-O는 demon이 죽어도 pod에 영향을 주지 않는다.
+</strong></p><p id="75c645d9-abab-4fd7-a072-db4d54ec992d" class="">
+</p><p id="008df30c-7dd4-4baa-a9bd-0f575d593721" class="">
+</p></div></article></body></html>
