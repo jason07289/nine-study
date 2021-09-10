@@ -1,0 +1,660 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2021.09.07, Day-7</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7d04533b-894e-423f-8821-e377c5128209" class="page sans"><header><h1 class="page-title">2021.09.07, Day-7</h1></header><div class="page-body"><figure id="b191b509-955d-4be3-8029-f6b3b8b4023e" class="link-to-page"><a href="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Question%20b191b509955d4be38029f6b3b8b4023e.html">Question</a></figure><p id="1797374c-18a1-46ba-9dca-adfe44bb0a47" class="">
+</p><p id="815610d3-031d-4480-abb0-c62f437fce0e" class="block-color-purple_background"><strong>#. minikube </strong></p><p id="d49fd282-94e5-4308-b405-ab4ffc55d8ad" class=""><strong>1. minikube .exe download</strong></p><p id="23610ed3-5e7c-4e80-8e4f-bfd64af55cdb" class=""><a href="https://minikube.sigs.k8s.io/docs/start/">https://minikube.sigs.k8s.io/docs/start/</a></p><p id="7a700e62-e3c2-4332-a5af-2eef2b7b3af9" class="">
+</p><p id="e3c00d10-9920-4127-afa6-0b78f08ebb2e" class=""><strong>2. minikube driver</strong></p><p id="58abb962-b848-41f9-84ec-2c423a9a45fb" class="">If minikube fails to start, see the drivers page for help setting up a compatible container or virtual-machine manager.</p><p id="1f77edd9-1ce2-42ed-9cb7-30ae0a51142b" class=""><a href="https://minikube.sigs.k8s.io/docs/drivers/">https://minikube.sigs.k8s.io/docs/drivers/</a></p><figure id="94d00e6d-d558-4c61-9efa-ec520c98ed9b" class="image"><a href="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Untitled.png"><img style="width:1201px" src="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Untitled.png"/></a></figure><figure id="085d066e-0dec-478f-8c3f-d5450c408036" class="image"><a href="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Untitled%201.png"><img style="width:989px" src="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Untitled%201.png"/></a></figure><p id="e7d1a898-2b84-4581-9059-978562f5420b" class="">
+</p><p id="5f4128ee-6608-420b-82a3-a8f781e6b4a2" class=""><strong>&lt;hyper-v&gt;</strong></p><p id="fa1269a5-d05b-475b-8469-93d5a95fe73e" class=""><a href="https://minikube.sigs.k8s.io/docs/drivers/hyperv/">https://minikube.sigs.k8s.io/docs/drivers/hyperv/</a></p><figure id="a3a0598b-ba33-468f-90d7-8c1fa71d5b7e" class="image"><a href="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Untitled%202.png"><img style="width:993px" src="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Untitled%202.png"/></a></figure><p id="6e2a4fac-3f28-4063-8aa2-543fe26f870a" class="">
+</p><p id="fded1f94-b298-4216-b9a1-90f54e5dbf9a" class=""><strong>3. minikube Dashboard</strong></p><figure id="71938cd5-ab88-4246-8651-194d4f21ecb7" class="image"><a href="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Untitled%203.png"><img style="width:992px" src="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Untitled%203.png"/></a></figure><p id="d4223eb6-2f4d-4cd5-bbad-af2af4a5076a" class="">
+</p><p id="14a4a67f-d320-4b00-bc23-b5c302a90154" class="">
+</p><p id="1fb931d3-8ad7-42ec-8795-fe3b9013f676" class="block-color-purple_background"><strong>#. ubuntu 환경에서 k8s cluster 구축 및 서비스 올려보기.</strong></p><p id="1ae304fd-ab73-4df0-a5dd-1eba5d923111" class=""><strong>1. Ubuntu 설정</strong></p><p id="889b3d71-31d4-4b7b-84b7-ac2c1d6e8186" class="">$ swapoff -a (/etc/fstab swap comment out)</p><p id="54c94354-7824-4314-bf60-04ae5b5dd424" class="">$ systemctl stop ufw &amp;&amp; ufw disable &amp;&amp; iptables </p><p id="b0125dbb-0d25-44cb-8b17-d05974d41508" class="">→ OS 방화벽 사용하지 않음</p><p id="f439f54a-727d-401d-9fbb-c1a5cdd278bd" class="">
+</p><p id="806ae8d1-ac40-4bcf-9439-e3c6c60ec99a" class=""><strong>2. ubuntu Docker Install</strong></p><p id="0d08a601-b496-4cfd-99d6-22b378bce20b" class="">docs.docker.com/engine/install/ubunthu</p><p id="3ad60790-018a-4cbe-b9c7-c8915abc71e3" class="">
+</p><p id="2ec0a6fc-a348-418c-9dcb-4ec551058b63" class="">systemctl enable docker</p><p id="4b7ac1f8-be97-4dcd-9b0f-a49e8637491f" class="">→ 항상 떠있어야해서 enable 시켜야함</p><p id="d8e6d1e6-63d0-49bb-b754-66c085223ab5" class="">
+</p><p id="de4623eb-60e3-48a3-a08e-c469b684ed39" class="">docker images</p><p id="ef281d5e-3385-4d98-89e3-11ac982936cc" class="">docker ps</p><p id="d61a019c-118f-4374-9322-57a8a3ca40b7" class="">→ kube를 설치하고 배포해야 image를 볼 수 있음</p><p id="96a6e0ef-d2c7-4c90-8f89-341663284ef7" class="">
+</p><p id="22209234-9be9-459f-baf8-0e8c0a4ded4c" class=""><strong>3. kubernetes 설치</strong></p><p id="5fd05787-9128-404e-8022-e8c181f25f73" class="">kubeadm - kube를 클러스터로 관리하기 위함</p><p id="5b3d01dd-b98e-4d02-bb50-70f5bd50b98a" class="">kubelet - Master API와 통신하기 위한 CLI</p><p id="f1bf777c-d95d-4345-8bdb-53b231bebc30" class="">kubectl - Container 통신 CLI</p><p id="358fdcac-f6a3-4bc3-b68e-7e1518ed4aaa" class="">
+</p><p id="39eaad9a-0406-4f7f-9309-925417baac66" class="">Creating a cluster</p><p id="be0fdbb6-a3f3-46bf-977f-fef166873cd4" class="">kubeadm init —pod-network</p><p id="fc957613-5b08-4942-9e87-9358bc544ed3" class="">Server의 host를 자동할당함.</p><p id="b3a37abb-620c-4dc8-be43-fb15018feb64" class="">→ service에 대한 대역을 어떻게 가져갈것인가.</p><p id="7e80dcfd-e463-47f5-a6d7-e0fcc3864617" class="">→ 원래 option을 넣어서 cluster 구성함.</p><p id="461f5bd3-bd5c-4c0a-b347-ade0e3a91e17" class="">
+</p><p id="add30288-a6ec-41c9-a28e-566438d87ffc" class="">1대의 vm으로 master node와 worker node 역할을 할끼다.</p><p id="cd972147-fbe7-4dfd-ba75-d4246ec6044d" class="">
+</p><p id="2fc52913-c108-4adf-928a-aad14c3e2d35" class="">실제 k8s는 docker를 어떻게 잘 관리할것인가가 포인트이다.</p><p id="daa66d75-5e37-4eef-ab9a-df02c48f5d76" class="">Kube config 파일 생성 및 권한 부여</p><p id="419076cd-8e85-46cb-b9d7-482f5da3a678" class="">→ config 파일로, k8s api server 정보가 들어가 있다. token, ip 등등</p><p id="d60370ea-eb1c-4c42-bf53-20b15b12eee7" class="">→ bastion에 config 파일을 설정해서 api server와 통신한다고 보면된다.</p><p id="260aa5b6-49c3-4a1a-8b16-8341c3a05ca2" class="">
+</p><p id="2e4891e1-122f-45cc-9db2-d966e21b961a" class=""><strong>Container 들끼리 통신할 수 있는 건 ooo을 깔아줘야한다.</strong></p><p id="09421756-6b71-47ce-8859-06f0f2fbc1a6" class="">추가적으로 배포를 해주어야함.(calico.yaml) - CNI(Container Network Interface)</p><p id="7203149a-f0c4-417c-90f3-177208bf3aa9" class="">→ kubectl apply -f &quot;https://&quot;</p><p id="71cf54b1-4707-41a1-9390-8cdf17dfcd70" class="">→ CNI가 Triggrr 역할을 한다.</p><p id="57aea3b9-f4ab-44f0-a18c-dd72ef0cd10f" class="">
+</p><p id="6f19d635-3918-4a4d-bdb3-a3d837d488e5" class=""><strong>vi .bashrc custom use</strong></p><p id="2e82cad3-0125-43dd-99e6-8b3ecd138c8e" class="">kubectl → k</p><p id="f94009b2-2df9-4a92-b3d3-0b589aba5278" class="">tab으로 자동완성 기능도 가능</p><p id="4a6354b3-f833-42d7-9243-58574598f4e8" class="">
+</p><p id="8cb85b96-78b4-4f08-b94d-2ef60210f00d" class=""><strong>Taints clearing</strong></p><p id="8189d123-17df-4ded-88dd-60215b414a2a" class=""><strong>Taints</strong> : 조건에 맞는 옵션을 추가로 넣어야 해당 node에 배포를 할 수 있다.</p><p id="7eb9c216-1181-4211-b97e-2bfc097c4a4f" class="">master 같은 경우 Taints 설정이 되어있다.</p><p id="67c115e6-0dc8-4497-a7f9-07c8d9353b64" class="">pod들을 Master에 배포해야하기 때문에 Taints 옵션을 clear 해야한다.</p><p id="6339d0c2-f066-44f6-8a7f-2a7d80ec339e" class="">etcd 등 중요한 정보에 대한 리소스 할당 보호를 해야하기 때문에 Master Node는 default로 Taint 정보가 있다.</p><p id="d718787b-f90f-48a9-9d21-19ab2232a0e7" class="">지금은 1개의 서버에 Master Node, Worker Node가 같이 있는 구조이므로 Taint설정을 clear해야한다.</p><p id="de407f03-0845-4249-a7ef-e6b28af38bb8" class="">k taint node ip.......</p><p id="b2b5dcf8-c880-4fa4-9961-9729376780c1" class="">
+</p><p id="f167118c-1029-4649-8630-3c47280eeeab" class="">deployments</p><p id="cad0276d-4181-4a2d-9c6f-db0f275c634e" class="">배포할 때, 가장 많이 사용한다.</p><p id="ab808b19-d0d7-4c98-ac59-3a35244ba647" class="">Pod보다 상위 개념</p><p id="63b9f38c-a775-43a8-af8a-55c0bf9f01a9" class="">Pod에서 Replica - Set을 얼마나 주는지</p><p id="b8e543fd-a822-4bb6-84ce-cfed873d3d1e" class="">Rolling-Update 개념까지 포함된게 deployments</p><p id="a821a027-0dfb-4c87-8b14-d8de7f9f5358" class="">yaml File 배포</p><p id="fae2162a-3150-465b-b9f1-740ee913889f" class="">controllers/nginx-deployment.yaml</p><p id="1b0c48a9-8aed-4abd-9bd2-b089f1a5d37c" class="">selector - 어떤 정보를 가지로 l/b를 해줄꺼냐.</p><p id="9c8ca5de-fd8d-4f2f-97a1-6015f7b54a98" class="">selector-matchLables-app</p><p id="47ff4397-92de-4a0d-b9cd-fcca6321c301" class="">k create nginx.yaml</p><p id="c315c29f-9cf3-4e45-a13b-4b62e1f37d4b" class="">
+</p><p id="cd6a92ed-cbd6-48fe-bb41-f30ff4f14a18" class="">실제 서비스를 하기 위해서는 앞에 service를 배포해야함</p><p id="e345e498-996d-4964-aac8-294b552d01b0" class="">service</p><p id="69d9c7fe-09c6-490e-a447-cd09d8c0914d" class="">Type 4가지</p><p id="be1e6690-7559-423f-a1f6-040149aca64c" class="">Cluster IP : 클러스터 내부 통신(type 미설정 시, default)</p><p id="0e602364-5f0d-4685-99ed-de40a8a14fc6" class="">NodePort : 클러스트 외부 통신</p><p id="58113620-b037-4b7e-9711-6bc899a9cd51" class="">selector : ngnix 라고 되어있는 pod에만 network-traffic을 보내라고 정의</p><p id="3d3cf3e5-6d02-4c28-85c0-dd0349c692d3" class="">
+</p><p id="4184abdb-c290-495e-8aa4-fc525334cfa2" class="">k get deployments.apps -o wide</p><p id="5043c14d-a83d-48b3-8745-50e87a9fac89" class="">k create -f service.yaml</p><p id="910f296c-299f-4ac9-85a1-14fd0358b4af" class="">k get svc</p><p id="f83b201e-bb05-4110-aded-d2a41570df2a" class=""><strong>→ 해당 서비스는 coreDNS Service와 일절 연관이 없다</strong></p><p id="2416c2ac-88cc-4db6-b7f1-31d51287ceee" class="">
+</p><p id="c9ed47eb-69d6-4eff-a7e4-5aa4fdd50dd7" class="">pod 배포하면 service를 붙여야한다.</p><p id="3bde11b2-4c80-4618-b7da-b3b3d1cf1c2f" class="">그럼 1 image(deployments) 당 1service?</p><p id="61ecae50-4b08-4647-b204-09b1c3d5ab23" class="">13.124.61.239</p><p id="47e345ca-279e-4c92-bfb7-32424b85d4f1" class="">vi / etc/ssh/sshd_config port 바꾸기.<strong> port : 20022</strong></p><p id="86895ed3-0fb3-497b-ac82-9455cb02efe1" class="">systemctl restart sshd</p><p id="b9204d40-b1eb-49a3-af81-5af06294e6dc" class="">passwd ubuntu</p><p id="85822a6c-efc6-4ed0-bfc2-d246781a074f" class="">
+</p><p id="6f5f7b7e-80e5-4ad9-9c4b-9ffb2642b91b" class="block-color-purple_background"><strong>#. To do</strong></p><p id="35f42261-b16a-43b7-aac2-6d2db14a810e" class="">1. Application 실행해보기 (ngnix)</p><p id="e5798330-e052-47c1-aaf4-7c498d64cb64" class="">지금 왜 실행이 안될까.?</p><p id="5aa406e4-1ead-4ac6-b53e-73a74c82a4d3" class="">→ public cloud(EC2)에서는 Cluster-IP로 외부망에서 접속이 불가능함.</p><p id="57bef832-f899-4970-b59e-dec732db1a55" class="">10.107.134.218:30596</p><figure id="d273f0ff-ead4-48c6-9b22-cdf6a18830ea" class="image"><a href="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Untitled%204.png"><img style="width:918px" src="2021%2009%2007,%20Day-7%2094d00e6dd5584c619efaec520c98ed9b/Untitled%204.png"/></a></figure><p id="3d6648c2-8703-4648-bf86-9c92953d3efb" class="">2. 주요 명령어 학습</p><p id="7beaa56d-a0c6-48df-8e89-8fafcc581eac" class=""><strong>kubectl get pod</strong></p><p id="574aa743-d448-410a-82f7-968344dd439d" class=""><strong>kubectl get pod -n kube-system</strong></p><p id="01c65f77-a50e-44ce-8b24-f5ef9027e202" class=""><strong>kubectl get pod -A</strong></p><p id="654470ed-87e1-4005-b701-c93d58bda2f2" class=""><strong>kubectl get pod -A -o wide</strong></p><p id="2726b3ef-3d3b-496e-b041-fee71948347c" class=""><strong><a href="https://kubernetes.io/ko/docs/reference/kubectl/cheatsheet/">https://kubernetes.io/ko/docs/reference/kubectl/cheatsheet/</a></strong></p><p id="5b99db36-2245-49de-a713-75e1d1f2cf6a" class="">
+</p><p id="f9337b97-9e9d-425f-b6c2-4bd34b843626" class="">3. Application 올려보기</p><p id="5cea33cd-2a59-4624-ad24-0967bcd5c91d" class="">→ 성공</p><p id="9b3d65dc-8419-4537-aa1d-8dfd89469615" class="">
+</p><p id="32c624db-2d95-402d-a3cf-4b034169e5f1" class="block-color-purple_background"><strong>#. DB - Client Server</strong></p><p id="dc6bbf77-484e-42ab-9348-e87c9d2bb21c" class="">DB Server 앞단에 Client Server를 연결시켜 관리하도록 함.</p><p id="22c9fd9f-aa6e-4921-b07d-78ffe647a6aa" class="">1. 권한 관리가 쉽다.</p><p id="091eb2f3-5609-4f1e-9598-50ec434c4614" class="">2. 여러 종류의 DB를 한번에 Control 가능하다.</p><p id="60d902a3-7ab5-436e-ad71-0d7350062055" class="">3. 보안적인 측면이 강해진다.</p><p id="c2f355c3-7480-4b1f-8b4e-bd88feff869f" class="">
+</p></div></article></body></html>
