@@ -56,7 +56,7 @@
     - ports.targetPort: 내부 Pod-Container와 통신하기 위한 port 정의
     - ports.nodePort: type이 NodePort일 때, 이걸 설정하면 기본 ports.port로도 접속이 가능하지만 nodePort도 client가 접속이 가능! 
      - 참고사진 <br/>
-      ![image](https://user-images.githubusercontent.com/38865267/133043284-168078d8-081b-4cf6-be86-3e464bb14297.png)![image](https://user-images.githubusercontent.com/38865267/133043684-cd2e667a-8c53-49f8-a762-08ca68875e0d.png)
+      ![image](https://user-images.githubusercontent.com/38865267/133043284-168078d8-081b-4cf6-be86-3e464bb14297.png)![image](https://user-images.githubusercontent.com/38865267/133043684-cd2e667a-8c53-49f8-a762-08ca68875e0d.png) <br/>
       출처: https://bcho.tistory.com/1262
 - kubectl 명령어로 service를 생성
 - kubectl get svc로 생성된 서비스를 확인할 수 있다. <br> ![image](https://user-images.githubusercontent.com/38865267/133047583-b5b50337-43ec-41de-9cab-d971782c31f5.png)
