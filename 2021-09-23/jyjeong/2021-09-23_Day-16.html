@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2021.09.23, Day-16</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="383cd618-5374-42db-a9a6-e301d590839d" class="page sans"><header><h1 class="page-title">2021.09.23, Day-16</h1></header><div class="page-body"><p id="63b20cde-f91e-4070-ba01-8fabba6b439a" class="">추석 이후,</p><h2 id="4796ca8a-9f91-44ee-95a4-1b8775d2b7bd" class="block-color-orange_background"><strong>Chapter 4. 레플리케이션과 그 밖의 컨트롤러: 관리되는 파드 배포</strong></h2><h2 id="db1a899a-0137-48a2-a2cb-3b330eb758f1" class="block-color-orange_background"><strong>4.1 파드를 안정적으로 유지하기</strong></h2><ul id="4ea09292-be34-4b31-9d95-76733ad8b827" class="bulleted-list"><li style="list-style-type:disc">쿠버네티스에 컨테이너 목록을 제공하면 해당 컨테이너를 클러스터 어딘가에서 계속 실행되도록 할 수 있다.</li></ul><ul id="bc079c4e-7dfb-4bb9-85b1-34491796d012" class="bulleted-list"><li style="list-style-type:disc">파드가 노드에 스케줄링되는 즉시, 해당 노드의 Kubelet은 파드의 컨테이너를 실행하고 파드가 존재하는 한 컨테이너가 계속 실행되도록 한다.</li></ul><p id="09f9f9a4-2940-4684-bc5c-1a0e7e3f6e4b" class="">→ 컨테이너의 프로세스에 크래시가 발생하면 Kubelet이 컨테이너를 다시 시작한다.</p><ul id="c657a8c7-b1a1-46af-944f-0b2c32abc738" class="bulleted-list"><li style="list-style-type:disc">100% 해결되지는 않는다. Ex) JVM OOM, Application Infinite Loop, Deadlock 등.</li></ul><ul id="597bb7c1-7ac2-4f16-93f1-44fd390bbf48" class="bulleted-list"><li style="list-style-type:disc">애플리케이션이 다시 시작되도록 하려면 애플리케이션 내부의 기능에 의존하지 말고 외부에서 애플리케이션의 상태를 체크해야한다.(이것이 <strong>Liveness probe</strong>)</li></ul><p id="480c42d3-5721-4c90-9296-b078ab33785a" class="">
+</p><h3 id="55840539-3911-4bb1-b9b5-508e90d0616c" class="block-color-purple_background"><strong>4.1.1 Liveness Probe.</strong></h3><p id="d996aab2-46d7-493a-8bc8-a2cbb2cb6c84" class="">쿠버네티스는 Liveness Probe를 통해 컨테이너가 살아 있는지 확인한다.</p><ul id="eb1dacd3-101f-43b4-8a9f-2bcffa97dfca" class="bulleted-list"><li style="list-style-type:disc">HTTP GET Probe</li></ul><ul id="cbdf89ad-f079-41df-8958-e96ede6822f2" class="bulleted-list"><li style="list-style-type:disc">TCP 소켓 Probe</li></ul><ul id="9e3be7dd-7b12-4ccc-8927-1e61cb1dc546" class="bulleted-list"><li style="list-style-type:disc">Exec Probe</li></ul><p id="377166cd-4688-407b-9261-2a87254d6a37" class="">
+</p><p id="1365ddc6-1401-4414-ba65-ca9875064152" class=""><strong>#. Liveness Probe Definition</strong></p><pre id="0b8d88ab-6d8e-4ef8-9642-14068518fbf9" class="code"><code>apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    labels:
+    app: myapp
+    name: appapppod
+    .
+    .
+    .
+       livenessProbe:
+         httpGet:
+           path: /com/livenessstatus
+           port: 7080
+           scheme: HTTPS
+           httpHeaders:
+           - name: Your_customer_header_if_any
+             value: my_customer_header_value
+         initialDelaySeconds: 120
+         timeoutSeconds: 40
+         periodSeconds: 90</code></pre><p id="a5b682b8-d1d6-4855-9502-02041568bace" class=""><strong>→ Container가 종료된다는 의미는 완전히 새로운 컨테이너가 생성된다는 것이다. 동일한 컨테이너가 다시 시작되는 개념이 아니다.</strong></p><p id="4aea3d99-70a4-4b43-b0b0-31813a7d869c" class="">
+</p><h3 id="253d0744-e151-4bf1-8626-6928e322cb61" class="block-color-purple_background"><strong>4.1.4 Liveness Probe 추가 속성 설정</strong></h3><ul id="c8b9bb33-ea39-412b-8cd9-883cf2d598ed" class="bulleted-list"><li style="list-style-type:disc">initialDelaySeconds: 15</li></ul><p id="22fb43b9-f07f-40f2-bf44-36f60f08eef3" class="">→ 쿠버네티스는 첫 번째 프로브 실행까지 15초를 대기한다.</p><ul id="fc220e99-6654-4a79-9125-9aea3db23e4d" class="bulleted-list"><li style="list-style-type:disc"><strong>애플리케이션 시작 시간을 고려해 초기 지연을 설정해야한다.</strong></li></ul><ul id="a63b5858-c4ef-44cc-8204-66bc5cd3ea6e" class="bulleted-list"><li style="list-style-type:disc">Pod Describe를 통해 종료 코드를 확인할 수 있다.</li></ul><ul id="ea1fc0ef-d70c-4394-9b2a-52b2fbffff70" class="bulleted-list"><li style="list-style-type:disc">128+9(SIGKILL-비정상종료 By Kernel) / 128+15(SIGTERM-정상종료 By Process)</li></ul><p id="798f07b3-f475-4f71-a289-e93f6915744e" class="">
+</p><h3 id="1082b27e-ad98-4d9d-b008-9bcef361a1db" class="block-color-purple_background"><strong>4.1.5 Liveness Probe 추가 속성 설정</strong></h3><ul id="3a738796-8b98-44f6-88ca-ff4c156bc1c1" class="bulleted-list"><li style="list-style-type:disc">운영 환경에서 필수.</li></ul><ul id="e040ab4f-5ffb-457d-9d75-5384fe4347aa" class="bulleted-list"><li style="list-style-type:disc">더 나은 Liveness Probe를 위해 특정 URL 경로에 요청하도록 구성해 애플리케이션 내 실행 중인 모든 주요 구성 요소가 살아 있는지, 응답이 있는지 확인하도록 구성한다.</li></ul><ul id="e840e740-6b9c-45c5-8648-da9a26f98e59" class="bulleted-list"><li style="list-style-type:disc">애플리케이션의 내부만 체크하고, 외부 요인의 영향을 받지 않도록 해야 한다.</li></ul><ul id="2a0d32d7-e656-45d4-b6e5-c98cbffe97b7" class="bulleted-list"><li style="list-style-type:disc"><strong>프론트엔드 웹서버의 Liveness Probe는 백엔드 데이터베이스 연결 실패에 대해 관여하면 안된다. </strong></li></ul><p id="d6f6db89-b3ec-4c00-aa1f-463cf8fed69b" class="">→ <strong>근본적인 원인이 데이터베이스에 있는 경우, 웹 서버 컨테이너를 재시작해도 해결할 수 없다.</strong></p><ul id="6b5eb9ae-7961-42b8-93c6-63370fa48aed" class="bulleted-list"><li style="list-style-type:disc">최대한 가벼워야 한다. Ex) JVM Exec Probe 대신 http get Probe를 사용하라.</li></ul><p id="d8145135-556a-42b3-a2f1-acdabd47c686" class="">
+</p><p id="2250b7f7-aaa9-449b-8abb-6a7638de20fe" class="">
+</p><h2 id="cd86ef40-2ac5-4fef-a4d2-2ab34d0e24af" class="block-color-orange_background"><strong>4.2 레플리케이션컨트롤러 소개</strong></h2><ul id="ac09876e-5ca0-43ce-84eb-74f0d14be3b8" class="bulleted-list"><li style="list-style-type:disc">쿠버네티스 리소스로서 파드가 항상 실행되도록 보장한다.</li></ul><ul id="c1242df0-0c44-4e8f-b6e2-d5010f01d0ad" class="bulleted-list"><li style="list-style-type:disc">레플리케이션컨트롤러는 사라진 파드를 감지(API Server 감시)해 교체 파드를 생성한다.</li></ul><p id="711a4181-12e6-407c-92ce-9d6466793e5b" class="">
+</p><h3 id="ee84bbe6-1824-48ed-8e49-bb8574428a45" class="block-color-purple_background"><strong>4.2.1 Replication Controller 동작</strong></h3><p id="77d59295-7d3c-441c-8931-7e078fe60b6d" class=""><strong>#. 컨트롤러 조정 루프 소개</strong></p><ul id="71bf06e8-0062-411b-aa97-91fab2ad1273" class="bulleted-list"><li style="list-style-type:disc">정확한 수의 파드가 항상 레이블 셀렉터와 일치하는지 확인</li></ul><p id="cdb06cb1-75ee-47e2-a082-9dced7b44463" class="">
+</p><p id="7688bbf0-0c93-458e-9ece-f8cd7763e217" class=""><strong>#. Replication Controller 세 가지 요소 이해</strong></p><ul id="5e590302-f953-4f07-830a-99af6a76ed51" class="bulleted-list"><li style="list-style-type:disc">레이블 셀렉터</li></ul><ul id="ed4d3ec1-df45-41c1-8126-5a6703276977" class="bulleted-list"><li style="list-style-type:disc">레플리카 수</li></ul><ul id="a0b02a5d-2176-4d66-bbab-d38b5f9acf82" class="bulleted-list"><li style="list-style-type:disc">파드 템플릿</li></ul><p id="d4c870d2-58ef-48f7-bbf9-8333c50ff863" class="">
+</p><p id="3ec5843b-1b67-479e-bf08-8a4d11ad9542" class=""><strong>#. 컨트롤러 레이블 셀렉터 변경 영향</strong></p><p id="1e7329e4-0e16-4dbe-b07d-f412f4381a3b" class="">레이블 셀렉터를 변경해도 기존 파드에 영향을 미치지 않는다.</p><p id="899690d6-7d8f-4cd1-85d3-e9857f662bb0" class="">→ 그냥 기존 Pod에 대한 관리가 끊어지는 것으로 이해하면 됨</p><p id="aa739963-46e3-4d9b-ae5e-d743ee360092" class="">
+</p><p id="12e33159-570f-40be-bbc5-c493bb730e89" class=""><strong>#. 파드 템플릿 변경 영향</strong></p><p id="da0d033e-66f8-49a2-91ba-d467195680e8" class="">파드 템플릿을 변경해도 기존 파드에 영향을 미치지 않는다.</p><p id="ad2e9f3b-a890-448d-8173-58f7c918a4ca" class="">→ 새로운 Pod가 생성될 때, 변경된 파드 템플릿을 통해 Pod를 생성한다.</p><p id="457e9969-2128-4fdc-bb0e-82f60950d846" class="">
+</p><h3 id="5d842b6d-ff8d-4fbe-9694-4702e5803316" class="block-color-purple_background"><strong>4.2.4 Replication Controller 범위 안팎으로 파드 이동하기</strong></h3><ul id="76a5bf4b-6f04-4fd4-a09d-f6fbb3c59c90" class="bulleted-list"><li style="list-style-type:disc">Replication Controller는 레이블 셀렉터와 일치하는 파드만을 관리한다. </li></ul><ul id="4f73ca27-707f-4cae-bd60-c1db30fe2af8" class="bulleted-list"><li style="list-style-type:disc">파드의 레이블을 변경하면 Controller의 범위에서 제거되거나 추가될 수 있다.</li></ul><p id="328fa565-a97e-4ed7-ab20-f9df5b6b7825" class="">
+</p><p id="663056c2-d1a7-40d7-baf2-755070c7867c" class="block-color-red"><strong>#. 컨트롤러에서 파드를 제거하는 실제 사례</strong></p><ul id="2e233375-0d0a-4fa3-a069-da87a40f3252" class="bulleted-list"><li style="list-style-type:disc">특정 파드에서 오류가 발생한 상황에서 해당 Pod의 Label을 변경하여 Replication Controller Manage 에서 벗어나게 한다.</li></ul><ul id="df8a62a4-fa87-4157-b695-6082153881cc" class="bulleted-list"><li style="list-style-type:disc">그럼 Replication Controller에서 새로운 Pod를 생성한다.</li></ul><ul id="aa5e069e-343d-4147-b312-53ff454b9372" class="bulleted-list"><li style="list-style-type:disc">관리에서 벗어난 Pod는 그 자체로 디버그 or 문제를 재연하여 해결한다.(지림)</li></ul><p id="71e50b47-5752-431c-ba80-b0bc15b757b1" class="">
+</p><h3 id="698308b7-7119-45b2-8615-77757fba888e" class="block-color-purple_background"><strong>4.2.6 Pod 수평 스케일링</strong></h3><ul id="36e149da-9359-4a8d-b33e-28336487220d" class="bulleted-list"><li style="list-style-type:disc">파드 수를 늘리거나 줄이는 것은 Replication Controller 리소스의 replicas 필드 값을 변경하기만 하면 된다.</li></ul><ul id="b7b1e3cc-6a8d-4ed3-9768-87e3776bb801" class="bulleted-list"><li style="list-style-type:disc">kubectl scale rc ooooo —replicas=10</li></ul><ul id="a0d3fafb-3837-4f27-af20-9b6bd405a4f1" class="bulleted-list"><li style="list-style-type:disc">kubectl edit rc ooooo → replicas 변경</li></ul><p id="dbf5eed1-280e-40f5-917d-855557778c3f" class="">
+</p><h3 id="b7311783-273d-4d82-ab0d-9ba8f461627a" class="block-color-purple_background"><strong>4.2.7 Replication Controller 삭제</strong></h3><ul id="6422d381-cb5d-4677-975b-4e7003f9e1bb" class="bulleted-list"><li style="list-style-type:disc">kubectl delete rc ooooo —cascade=false</li></ul><p id="e9e02141-9a63-46fd-83cc-fbd6cd064e25" class="">→ 관리하는 pod는 삭제하지 않은 채 rc만 삭제 가능하며, 관리 rc만 사라진다.</p><ul id="bb0fcc8d-e041-481e-9e46-b6ee2a86bae0" class="bulleted-list"><li style="list-style-type:disc">다시 rc, replicaset등을 사용해 관리할 수 있다.</li></ul><p id="cf77c5cd-f146-44a3-90e8-103aca9d9104" class="">
+</p><h2 id="62c267d7-8f68-481a-96c3-9c1809cccd09" class="block-color-orange_background"><strong>4.3 레플리케이션컨트롤러 대신 레플리카셋 사용하기</strong></h2><ul id="b3691151-4fea-443c-8055-49586abe2533" class="bulleted-list"><li style="list-style-type:disc">솔직히 별거 없다.</li></ul><ul id="fdcf7828-2dca-4a33-a407-19a257bbd0ce" class="bulleted-list"><li style="list-style-type:disc">그냥 레플리케이션컨트롤러 Vs. 레플리카셋 이해하면 됨</li></ul><p id="88e8dd1a-6e0b-4602-bf88-c227efe30fb2" class="">
+</p><h3 id="c5887ca1-f0f3-4f27-8b1c-8bb1bbc06f18" class="block-color-purple_background"><strong>4.3.1 Replication Controller Vs. Replica Set</strong></h3><ul id="39548e87-5c94-4d73-af5f-1c06d1853250" class="bulleted-list"><li style="list-style-type:disc">레플리카셋은 좀 더 풍부한 표현식을 사용하는 파드 셀렉터를 갖고 있다.</li></ul><ul id="f5a36889-b6f8-44ad-bf91-6e174077b683" class="bulleted-list"><li style="list-style-type:disc">레플리카셋의 셀렉터는 특정 레이블이 없는 파드나 레이블의 값과 상관없이 특정 레이블의 키를 갖는 파드를 매칭할 수 있다.</li></ul><ul id="d7fb2c26-31af-4a32-86f4-11113f38f045" class="bulleted-list"><li style="list-style-type:disc">레이블 키의 존재만으로 파드 매칭이 가능하다.</li></ul><p id="4d15981c-ab27-48c8-bd08-9409c1428873" class="">
+</p><h3 id="3af9fa1f-d3bc-4e27-9e5b-c4fb8a2811e0" class="block-color-purple_background"><strong>4.3.2 Replication Controller Vs. Replica Set</strong></h3><ul id="35a7b112-1a29-4df9-ab27-21da2f3c6bbf" class="bulleted-list"><li style="list-style-type:disc">특이사항 있음</li></ul><ul id="94aeef65-5f9c-4ef5-951a-e964447c8fee" class="bulleted-list"><li style="list-style-type:disc">replicaset.yaml로 리소스를 생성할 때, apiVersion이 v1이 아님.</li></ul><p id="081e321f-2d74-4e59-8d5b-1ae55f38bbf8" class="">→ 이거 이해안되는데.. 공부하기</p><p id="8dbff797-3f55-4a99-9cf5-f9fc7c34e294" class="">
+</p><ul id="a956c652-62ae-4a7a-98bc-06da12598f79" class="bulleted-list"><li style="list-style-type:disc">rs를 약자로 씀.</li></ul><ul id="bcf90bec-8f49-43cc-88de-cc2a53374c73" class="bulleted-list"><li style="list-style-type:disc"><strong>selector: matchExpressions: - key: app / operator: In / values: -xxxx</strong></li></ul><p id="e31f61b4-f1cf-4f87-8840-538f2a725b79" class="">
+</p><p id="8b3db81e-9bc5-4bd8-aa8a-969d045e6b9c" class=""><strong>#. Operator</strong></p><ul id="c207c2b8-f5b5-4713-b81b-dad181642314" class="bulleted-list"><li style="list-style-type:disc">In : 레이블의 값이 지정된 값 중 하나와 일치.</li></ul><ul id="5c5dae95-5cc3-46ae-8ded-f36aa7046738" class="bulleted-list"><li style="list-style-type:disc">NotIn : 레이블의 값이 지정된 값과 일치하지 않아야 함.</li></ul><ul id="d002dea1-e19e-40d2-a4a6-b2d602ebf92f" class="bulleted-list"><li style="list-style-type:disc">Exists : 파드는 지정된 키를 가진 레이블이 포함돼야 함.(값은 중요하지 않음)</li></ul><ul id="38611811-a413-4200-b858-cbc7fb152a26" class="bulleted-list"><li style="list-style-type:disc">DoesNotExist : 파드에 지정된 키를 가진 레이블이 포함돼 있지 않아야 함.</li></ul><p id="4bcdea5e-4f58-4263-b751-16b1894d519e" class="">
+</p><h2 id="0de974e9-03de-4bd0-95a7-8aee3b345dd7" class="block-color-orange_background"><strong>4.4 데몬셋을 사용해 각 노드에서 정확히 한 개의 파드 실행하기</strong></h2><ul id="fe5779c3-e951-403f-86cf-aa4a75448438" class="bulleted-list"><li style="list-style-type:disc">클러스터의 모든 노드에, 노드당 하나의 파드만 실행되길 워나는 경우</li></ul><ul id="b842715f-44ac-4d01-a58e-a22647378946" class="bulleted-list"><li style="list-style-type:disc">시스템 수준의 작업을 수행하는 인프라 관련 파드 </li></ul><p id="5f53416a-6bc9-423b-9dc2-98957ff7e9c1" class="">      <strong>Ex) 로그 수집기와 리소스 모니터를 실행하려는 경우 / 쿠버네티스의 kube-proxy</strong></p><ul id="761cac56-fae0-4eb7-83ae-fcfb28748509" class="bulleted-list"><li style="list-style-type:disc"><strong>데몬셋에 의해 생성되는 파드는 타깃 노드가 이미 지정돼 있고 쿠버네티스 스케줄러를 건너뛰는 것</strong>을 제외하면 이 오브젝트는 레플리케이션컨트롤러 또는 레플리카셋과 매우 유사하다.</li></ul><ul id="2372f712-5fe5-404f-b821-f9718f3d6a6c" class="bulleted-list"><li style="list-style-type:disc">데몬셋에는 복제본 수라는 개념이 없다.(개념상 없을 수 밖에 없음)</li></ul><ul id="c3d9eeda-e23d-478f-93a4-d540381b7e10" class="bulleted-list"><li style="list-style-type:disc">노드가 다운되면 데몬셋은 다른 곳에서 파드를 생성하지 않는다.</li></ul><ul id="8b1728f4-bc8d-4b84-bd63-ffacaf304b22" class="bulleted-list"><li style="list-style-type:disc">새 노드가 클러스터에 추가되면 데몬셋은 즉시 새 파드 인스턴스를 새 노드에 배포한다.</li></ul><ul id="976f84f5-6978-4437-8f25-3c445dcd1cd2" class="bulleted-list"><li style="list-style-type:disc"><strong>데몬셋이 관리하는 파드는 스케줄러와 무관하다.</strong></li></ul><ul id="51d67227-5833-49a2-9d4d-f33ee9d17594" class="bulleted-list"><li style="list-style-type:disc">약자로 ds</li></ul><p id="27eb9ebc-f63b-4e51-96a4-c33a199255ad" class="">
+</p><h3 id="12a500e7-4cf7-469c-94d7-343fedf590aa" class="block-color-purple_background"><strong>4.4.2 데몬셋을 사용해 특정 노드에서만 파드를 실행하기</strong></h3><ul id="16670ca6-d96f-41c8-8ad0-c460ecd3a97b" class="bulleted-list"><li style="list-style-type:disc">Default - 모든 Node에 파드를 배포한다.</li></ul><ul id="d480d0c0-e273-43ed-ba9a-89de2b6b35cc" class="bulleted-list"><li style="list-style-type:disc">Pod Templete에 node-Selector 속성을 지정하면 특정 노드에만 파드가 배포된다.</li></ul><p id="67651fca-3850-40b3-b025-e9f6e55436db" class="">      Ex) Node에 Label을 설정 → 데몬셋 작성(해당 레이블 노드만 선택) → 리소스 할당</p><ul id="fdfc6738-aac6-412f-bc29-4d41a6224956" class="bulleted-list"><li style="list-style-type:disc">ssd-monitor-daemonset.yaml</li></ul><p id="d5722c9e-96f2-4e9b-9eb7-1d35e13b708b" class="">      Ex) spec: nodeSelector: disk: ssd</p><p id="48afc68a-49a0-4291-9d98-527a28469d57" class="">→ 이 파드의 인스턴스는 disk=ssd 레이블이 있는 각 노드에 생성될 것</p><ul id="6efd8446-76f2-4727-bb52-84364aec1961" class="bulleted-list"><li style="list-style-type:disc">필요한 레이블을 노드에 추가하면 추가하자마자 즉시 파드 실행(감시)</li></ul><ul id="f9e1830d-1bad-4992-8a66-304f6d7af1f8" class="bulleted-list"><li style="list-style-type:disc">노드에 레이블을 삭제하면 삭제 즉시 파드 삭제(감시)</li></ul><p id="397e5b7f-509d-4838-8c07-7ac8cd535ea4" class="">
+</p><h2 id="522cec82-7509-4572-b7c9-8dee18e6ce5c" class="block-color-orange_background"><strong>4.5 완료 가능한 단일 태스크를 수행하는 파드 실행</strong></h2><ul id="6293e801-ae7a-4bcf-b851-1470c674cedf" class="bulleted-list"><li style="list-style-type:disc">완료 가능한 태스크(completable task)에서는 프로세스가 종료된 후에 다시 시작되지 않는다.</li></ul><ul id="90ef1868-f59a-42b5-b8ed-5cfffdcae12d" class="bulleted-list"><li style="list-style-type:disc">그냥 배치라고 생각하면 됨.</li></ul><ul id="add40dbd-40cf-448a-93d3-f9d5223075c9" class="bulleted-list"><li style="list-style-type:disc">노드 장애 발생 시, 다른 노드로 다시 스케줄링</li></ul><ul id="a6ed0b7d-3599-434c-8243-449640d81025" class="bulleted-list"><li style="list-style-type:disc">프로세스 장애 발생 시, 잡에서 컨테이너를 다시 시작할 것인지 설정 가능</li></ul><p id="f599162b-a17a-43f8-9e0a-30091096cf7f" class="">
+</p><p id="fcd594f0-e10a-4aba-981b-4bde7a8f235d" class=""><strong>#. 궁금증</strong></p><ol type="1" id="01a750dc-3d16-4190-b85e-910d22a51417" class="numbered-list" start="1"><li>Batch 를 순차적으로 실행해야 한다면 가능한가?</li></ol><p id="c449bc73-bc14-4ea5-8c3e-6eee83a619c8" class="">      (Process가 종속될 경우)</p><p id="725d264b-904e-42be-994d-3886bb4c8056" class="">
+</p><p id="7ed8755d-ee8d-4e56-af74-80e6cf7c8a7e" class="">아무튼 인상깊은 부분은, 크론잡은 스케줄에 설정한 각 실행에 항상 하나의 잡만 생성하지만 두 개의 잡이 동시에 생성되거나 전혀 생성되지 않을 수 있다.</p><p id="36eb399a-36c7-4cfd-86d9-5097bbcdfe93" class="">따라서, 멱등성 보장(한번 실행이 아니라 여러 번 실행해도 괜춘)</p><p id="c9255bd2-527c-4f34-beff-9bc53f9160e3" class="">프로세스 독립성 보장(다음 번 잡 실행이 이전의 실행에서 완료했어야 하는 작업을 수행) 하는지 꼭 확인</p><p id="2b746a2c-3061-4750-adf4-dffb080e774f" class="">
+</p></div></article></body></html>
