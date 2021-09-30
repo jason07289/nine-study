@@ -22,25 +22,31 @@
 <br/><br/>
 
 ## Blue / Green 무중단 배포
-- as-is service 운영 중
+
  ![image](https://user-images.githubusercontent.com/38865267/135421315-2f5c09f6-f886-4add-998b-352b10ed033a.png)
+- as-is service 운영 중
+
 
 <br/>
 
-
-- OKD 내에 새로운 버전의 pod v2가 들어온 상황 (테스트 서버에 연결되어 있다.) 회사 내부에서 개발자/현업 테스트 가능
 ![image](https://user-images.githubusercontent.com/38865267/135421843-35905789-9caa-4e04-9cc7-b47330951b89.png)
 
+- OKD 내에 새로운 버전의 pod v2가 들어온 상황 (테스트 서버에 연결되어 있다.) 회사 내부에서 개발자/현업 테스트 가능
+
+
 <br/>
 
-- 테스트 완료시 POD v2를 실 운영중인 운영1로 연결
 ![image](https://user-images.githubusercontent.com/38865267/135422475-53cc996a-43da-48bb-88f2-ec96494797a8.png)
+- 테스트 완료시 POD v2를 실 운영중인 운영1로 연결
+
 
 <br/>
 
+
+![image](https://user-images.githubusercontent.com/38865267/135423020-4ad88f56-474c-4c22-98f5-c65a19d61b4d.png)
 
 - B/G 배포에서는 이전 버전의 POD가 관리자가 설정한 시간동안 남아있다. 만약, 운영중 문제 발생시 남아있던 이전 버전으로 원복가능하다.
-![image](https://user-images.githubusercontent.com/38865267/135423020-4ad88f56-474c-4c22-98f5-c65a19d61b4d.png)
+
 
 - 이전 버전이 남아있지 않는 경우에는 원복은 가능하나 이미지를 다시 띄워야 해서 시간이 좀 더 걸린다.
 
